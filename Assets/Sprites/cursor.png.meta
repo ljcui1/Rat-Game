@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: edeb138bd109a0b4eb5cf0b46c455cfd
+guid: c151f0c87353d444bb17f729ce38c989
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1988054761782168900
-    second: rat3_0
+      213: 6554736390298987251
+    second: cursor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 0
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rat3_0
+      name: cursor_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 48
-        height: 12
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44dcc0ec54df69b10800000000000000
-      internalID: 1988054761782168900
+      spriteID: 3fae81cb40a17fa50800000000000000
+      internalID: 6554736390298987251
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      rat3_0: 1988054761782168900
+      cursor_0: 6554736390298987251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
