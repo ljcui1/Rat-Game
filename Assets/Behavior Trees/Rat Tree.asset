@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7a65a64ca895842abc0e2c774d054e, type: 3}
   m_Name: Rat Tree
   m_EditorClassIdentifier: 
-  blackboard: {fileID: 0}
+  blackboard: {fileID: 11400000, guid: f2c75086eba9ded48a0fbd340e00bb93, type: 2}
   updateMode: 0
   tickRate: 30
   rootNode: {fileID: -4932847113339958214}
