@@ -14,7 +14,7 @@ public class Rat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -25,6 +25,10 @@ public class Rat : MonoBehaviour
 
     private void OnMouseDown()
     {
-        manager.dropTreat();
+        if(manager.heldTreat == true)
+        {
+            manager.dropTreat();
+        }
+        
     }
 }

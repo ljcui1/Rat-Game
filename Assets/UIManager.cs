@@ -14,11 +14,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider rat1;
     [SerializeField] private Slider rat2;
 
+    public bool heldTreat;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
         Cursor.visible = true;
+        heldTreat = false;
     }
 
     // Update is called once per frame
@@ -30,10 +33,12 @@ public class UIManager : MonoBehaviour
     public void holdTreat()
     {
         Cursor.SetCursor(treathand, Vector2.zero, CursorMode.Auto);
+        heldTreat = true;
     }
 
     public void dropTreat()
     {
         Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
+        heldTreat = false;
     }
 }
