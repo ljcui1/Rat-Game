@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
+    [SerializeField] private UIManager manager;
+
     [SerializeField] private Cursor cursor;
     [SerializeField] private BehaviourRunner br;
     [SerializeField] private Rigidbody2D rb;
@@ -19,5 +21,10 @@ public class Rat : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnMouseDown()
+    {
+        manager.dropTreat();
     }
 }

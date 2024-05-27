@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 {
 
     [SerializeField] private Texture2D hand;
+    [SerializeField] private Texture2D treathand;
+
     [SerializeField] private Button treat;
     [SerializeField] private Button tickle;
     [SerializeField] private Slider rat1;
@@ -23,5 +25,15 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void holdTreat()
+    {
+        Cursor.SetCursor(treathand, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void dropTreat()
+    {
+        Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
     }
 }
