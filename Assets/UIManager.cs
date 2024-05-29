@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider rat1;
     [SerializeField] private Slider rat2;
 
+    [SerializeField] private RatFSM ratFSM;
+
+    [SerializeField] private TMP_Text dropText;
+
     public bool heldTreat;
 
     // Start is called before the first frame update
@@ -22,18 +27,20 @@ public class UIManager : MonoBehaviour
         Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
         Cursor.visible = true;
         heldTreat = false;
+        dropText.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        dropText.enabled = heldTreat;
     }
 
     public void holdTreat()
     {
         Cursor.SetCursor(treathand, Vector2.zero, CursorMode.Auto);
         heldTreat = true;
+
     }
 
     public void dropTreat()
