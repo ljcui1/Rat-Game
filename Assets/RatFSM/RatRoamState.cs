@@ -13,6 +13,8 @@ public class RatRoamState : RatBaseState
 
     private IEnumerator wait;
 
+    private bool reached;
+
     private Vector3 mousePos;
     [SerializeField] private Animation walk;
 
@@ -22,6 +24,7 @@ public class RatRoamState : RatBaseState
         y = Random.Range(minY, maxY);
 
         wait = WaitToMove(rat);
+        reached = true;
     }
 
     public override void UpdateState(RatFSM rat)
@@ -44,20 +47,27 @@ public class RatRoamState : RatBaseState
                 x = Random.Range(minX, maxX);
                 y = Random.Range(minY, maxY);
                 Vector2 pos = new Vector2(x, y);
-                if (pos.x > rat.transform.position.x)
+
+                reached = false;
+                while (reached == false)
                 {
-                    rat.ratSprite.flipX = true;
-                }
-                else
-                {
-                    rat.ratSprite.flipX = false;
-                }
-                
-                while (rat.transform.position.x != x && rat.transform.position.y != y)
-                {
-                    
+                    if(rat.transform.position.x == x && rat.transform.position.y == y)
+                    {
+                        reached = true;
+                    }
+
+                    if (pos.x > rat.transform.position.x)
+                    {
+                        rat.ratSprite.flipX = true;
+                    }
+                    else
+                    {
+                        rat.ratSprite.flipX = false;
+                    }
                     rat.transform.position = Vector2.MoveTowards(rat.transform.position, pos, 0.5f);
                 }
+                
+                
             }
             else
             {
