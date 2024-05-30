@@ -16,7 +16,7 @@ namespace GOAP.Factories
     {
         public override IGoapSetConfig Create()
         {
-            GoapSetBuilder builder = new(name:"Rat3_0Set");
+            GoapSetBuilder builder = new(name:"Rat3_Set");
 
             BuildGoals(builder);
             BuildActions(builder);

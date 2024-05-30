@@ -10,7 +10,7 @@ namespace GOAP.Behaviors
         private void Awake()
         {
             AgentBehaviour agent = GetComponent<AgentBehaviour>();
-            agent.GoapSet = GoapRunner.GetGoapSet(id: "Rat3_0Set");
+            agent.GoapSet = GoapRunner.GetGoapSet(id: "Rat3_Set");
         }
 
     }

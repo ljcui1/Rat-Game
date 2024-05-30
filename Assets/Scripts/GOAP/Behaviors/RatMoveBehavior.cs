@@ -25,22 +25,23 @@ namespace GOAP.Behaviors
         }
         private void OnEnable()
         {
-            behaviour.Events.OnTargetInRange += EventsOnTargetInRange;
+            //behaviour.Events.OnTargetInRange += EventsOnTargetInRange;
             behaviour.Events.OnTargetChanged += EventsOnTargetChanged;
             behaviour.Events.OnTargetOutOfRange += EventsOnTargetOutOfRange;
         }
 
-        private void EventsOnTargetInRange(ITarget target)
-        {
-            CurrentTarget = target;
-            agent.SetDestination(target.Position);
-        }
 
         private void OnDisable()
         {
+            //behaviour.Events.OnTargetInRange += EventsOnTargetInRange;
             behaviour.Events.OnTargetChanged -= EventsOnTargetChanged;
             behaviour.Events.OnTargetOutOfRange -= EventsOnTargetOutOfRange;
         }
+        /*private void EventsOnTargetInRange(ITarget target)
+        {
+            CurrentTarget = target;
+            agent.SetDestination(target.Position);
+        }*/
 
         private void EventsOnTargetOutOfRange(ITarget target)
         {
