@@ -14,7 +14,7 @@ namespace GOAP.Behaviors
         //private Animator animator;
         private AgentBehaviour behaviour;
         private ITarget CurrentTarget;
-        private Vector3 LastPosition;
+        private Vector2 LastPosition;
         [SerializeField] private float MinMoveDistance = 0.25f;
 
         private void Awake()

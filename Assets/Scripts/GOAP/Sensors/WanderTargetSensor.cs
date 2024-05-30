@@ -11,14 +11,14 @@ namespace GOAP.Sensors {
 
         public override ITarget Sense(IMonoAgent agent, IComponentReference references)
         {
-            Vector2 pos = GetRandomPosition(agent);
+            Vector3 pos = GetRandomPosition(agent);
             return new PositionTarget(pos);
         }
 
-        private Vector2 GetRandomPosition(IMonoAgent agent) 
+        private Vector3 GetRandomPosition(IMonoAgent agent) 
         {
             Vector2 random = Random.insideUnitCircle * 5;
-            Vector3 newPos = agent.transform.position + new Vector3(random.x, 0, random.y);
+            Vector3 newPos = agent.transform.position + new Vector3(random.x, random.y, 0);
             
             return newPos;
         }
