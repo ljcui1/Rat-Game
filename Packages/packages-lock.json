@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "com.crashkonijn.goap": {
+      "version": "https://github.com/crashkonijn/GOAP.git?path=/Package#2.1.21",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.collections": "1.2.4"
+      },
+      "hash": "459c434529a980b8690540ed7f483afabe289f8c"
+    },
+    "com.h8man.2d.navmeshplus": {
+      "version": "https://github.com/h8man/NavMeshPlus.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "35df5c289293b15cec093614a211810fe145760c"
+    },
     "com.unity.2d.animation": {
       "version": "10.0.3",
       "depth": 1,
@@ -93,9 +109,18 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.ai.navigation": {
+      "version": "2.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.burst": {
       "version": "1.8.11",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1"
@@ -111,7 +136,7 @@
     },
     "com.unity.collections": {
       "version": "1.2.4",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.6.6",
