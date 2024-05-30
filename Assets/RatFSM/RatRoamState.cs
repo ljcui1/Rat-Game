@@ -23,6 +23,11 @@ public class RatRoamState : RatBaseState
 
     public override void EnterState(RatFSM rat)
     {
+        if (rat.manager.heldTreat == true)
+        {
+            rat.SwitchState(rat.treatState);
+        }
+
         Debug.Log("plop");
         if (start == false) {
             x = Random.Range(minX, maxX);
@@ -33,7 +38,7 @@ public class RatRoamState : RatBaseState
         }
         if (timer > 5)
         {
-            rat.transform.position = Vector2.MoveTowards(rat.transform.position, pos, 0.5f);
+            rat.transform.position = Vector2.MoveTowards(rat.transform.position, pos, 1.5f);
             Debug.Log("timer complete");
             timer = 0;
             if (rat.transform.position.x == x && rat.transform.position.y == y)
