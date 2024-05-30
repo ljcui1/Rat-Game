@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class RatRoamState : RatBaseState
 {
@@ -14,17 +14,47 @@ public class RatRoamState : RatBaseState
     private IEnumerator wait;
 
     private bool reached;
+    private int timer = 0;
+    private bool start = false;
+    private Vector2 pos;
 
     private Vector3 mousePos;
     [SerializeField] private Animation walk;
 
     public override void EnterState(RatFSM rat)
     {
-        x = Random.Range(minX, maxX);
-        y = Random.Range(minY, maxY);
-
-        wait = WaitToMove(rat);
-        reached = true;
+        Debug.Log("plop");
+        if (start == false) {
+            x = Random.Range(minX, maxX);
+            y = Random.Range(minY, maxY);
+            pos = new Vector2(x, y);
+            start = true;
+            reached = false;
+        }
+        if (timer > 5)
+        {
+            rat.transform.position = Vector2.MoveTowards(rat.transform.position, pos, 0.5f);
+            Debug.Log("timer complete");
+            timer = 0;
+            if (rat.transform.position.x == x && rat.transform.position.y == y)
+            {
+                reached = true;
+                start = false;
+                Debug.Log("MADE IT TO MY FINAL DESTINATION!");
+            }
+        }
+        if (reached == false)
+        { 
+            if (pos.x > rat.transform.position.x)
+            {
+                rat.ratSprite.flipX = true;
+            }
+            else
+            {
+                rat.ratSprite.flipX = false;
+            }
+        }
+        timer++;
     }
 
     public override void UpdateState(RatFSM rat)
@@ -44,29 +74,7 @@ public class RatRoamState : RatBaseState
         {
             if(rat.happiness > 50)
             {
-                x = Random.Range(minX, maxX);
-                y = Random.Range(minY, maxY);
-                Vector2 pos = new Vector2(x, y);
-
-                reached = false;
-                while (reached == false)
-                {
-                    if(rat.transform.position.x == x && rat.transform.position.y == y)
-                    {
-                        reached = true;
-                    }
-
-                    if (pos.x > rat.transform.position.x)
-                    {
-                        rat.ratSprite.flipX = true;
-                    }
-                    else
-                    {
-                        rat.ratSprite.flipX = false;
-                    }
-                    rat.transform.position = Vector2.MoveTowards(rat.transform.position, pos, 0.5f);
-                }
-                
+                rat.SwitchState(rat.roamState);
                 
             }
             else
@@ -88,10 +96,10 @@ public class RatRoamState : RatBaseState
         }
     }
 
-    private IEnumerator WaitToMove(RatFSM rat)
+    private IEnumerator WaitToMove()
     {
-        
-        
+
+        Debug.Log("I was called!");
 
         int secs = Random.Range(3, 10);
         yield return new WaitForSeconds(secs);
