@@ -34,6 +34,7 @@ public class RatTreatState : RatBaseState
         else
         {
             //switch state to roam
+            rat.happiness += 10;
             rat.SwitchState(rat.roamState);
         }
     }

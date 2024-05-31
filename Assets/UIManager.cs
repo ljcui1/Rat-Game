@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
 
     public bool heldTreat;
 
+    private IEnumerator statDown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,14 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         dropText.enabled = heldTreat;
+        rat1.value = ratFSM.happiness;
+        if (ratFSM.happiness > 100)
+        {
+            rat1.value = 100;
+        }
+        
+
+        
     }
 
     public void holdTreat()
@@ -47,5 +57,29 @@ public class UIManager : MonoBehaviour
     {
         Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
         heldTreat = false;
+    }
+
+    private IEnumerator StatDown()
+    {
+
+        Debug.Log("I was called!");
+
+        yield return new WaitForSeconds(10);
+        ratFSM.happiness--;
+        yield return new WaitForSeconds(15);
+        ratFSM.hunger -= 5;
+        yield return new WaitForSeconds(20);
+        ratFSM.thirst -= 5;
+
+        if (ratFSM.hunger < 70)
+        {
+            yield return new WaitForSeconds(10);
+            ratFSM.happiness--;
+        }
+        if (ratFSM.thirst < 70)
+        {
+            yield return new WaitForSeconds(10);
+            ratFSM.happiness--;
+        }
     }
 }

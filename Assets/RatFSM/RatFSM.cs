@@ -20,6 +20,8 @@ public class RatFSM : MonoBehaviour
     public RatTickleState tickleState = new RatTickleState();
 
     public UIManager manager;
+    public Animator rat;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,14 @@ public class RatFSM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(happiness > 100)
+        {
+            rat.Play("bogglewalk");
+        }
+        else
+        {
+            rat.Play("walking");
+        }
         currentState.UpdateState(this);
     }
 
