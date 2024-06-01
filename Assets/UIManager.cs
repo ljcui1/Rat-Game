@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
         Cursor.visible = true;
         heldTreat = false;
         dropText.enabled = false;
+        statDown = StatDown();
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class UIManager : MonoBehaviour
         {
             rat1.value = 100;
         }
-        
+        StartCoroutine(StatDown());
 
         
     }
