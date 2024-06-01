@@ -11,5 +11,13 @@ public class HappinessCounter : MonoBehaviour
     {
         Slider slider = GetComponent<Slider>();
         slider.value = fsm.happiness;
+        if (fsm.happiness > 100)
+        {
+            slider.value = 100;
+        }
+        if(fsm.happiness < 0)
+        {
+            fsm.happiness = 0;
+        }
     }
 }

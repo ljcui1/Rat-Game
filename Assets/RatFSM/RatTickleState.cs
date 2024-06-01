@@ -20,7 +20,7 @@ public class RatTickleState : RatBaseState
 
     public override void UpdateState(RatFSM rat)
     {
-        time++;
+        /*time++;
         mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
@@ -35,7 +35,7 @@ public class RatTickleState : RatBaseState
         else
         {
             rat.SwitchState(rat.roamState);
-        }
+        }*/
 
     }
 }

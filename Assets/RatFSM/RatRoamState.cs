@@ -71,9 +71,6 @@ public class RatRoamState : RatBaseState
         if (rat.manager.heldTreat == true)
         {
             rat.SwitchState(rat.treatState);
-        }else if(rat.manager.heldTreat == false && mousePos == rat.transform.position)
-        {
-            rat.SwitchState(rat.tickleState);
         }
 
         if(rat.hunger > 50 && rat.thirst > 50)

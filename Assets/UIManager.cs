@@ -6,9 +6,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-
-    [SerializeField] private Texture2D hand;
-    [SerializeField] private Texture2D treathand;
+    [SerializeField] private CursorController cc;
 
     [SerializeField] private Button treat;
     [SerializeField] private Button tickle;
@@ -26,8 +24,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
-        Cursor.visible = true;
+        //Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
+        //Cursor.visible = true;
         heldTreat = false;
         dropText.enabled = false;
         statDown = StatDown();
@@ -49,14 +47,16 @@ public class UIManager : MonoBehaviour
 
     public void holdTreat()
     {
-        Cursor.SetCursor(treathand, Vector2.zero, CursorMode.Auto);
+        //Cursor.SetCursor(treathand, Vector2.zero, CursorMode.Auto);
+        cc.sr.sprite = cc.treathand;
         heldTreat = true;
 
     }
 
     public void dropTreat()
     {
-        Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
+        //Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
+        cc.sr.sprite = cc.hand;
         heldTreat = false;
     }
 
