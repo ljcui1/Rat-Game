@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rat3_bog_0: 2350128452588179511
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

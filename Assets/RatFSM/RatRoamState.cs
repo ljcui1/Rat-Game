@@ -45,7 +45,8 @@ public class RatRoamState : RatBaseState
             {
                 reached = true;
                 start = false;
-                Debug.Log("MADE IT TO MY FINAL DESTINATION!");
+                rat.happiness--;
+                //Debug.Log("MADE IT TO MY FINAL DESTINATION!");
             }
         }
         if (reached == false)
