@@ -35,6 +35,7 @@ public class CursorController : MonoBehaviour
     {
         if(collision.CompareTag("rat"))
         {
+            Debug.Log("TICKLE TICKLE");
             rat.SwitchState(rat.tickleState);
         }
     }
@@ -57,7 +58,7 @@ public class CursorController : MonoBehaviour
 
     private IEnumerator Tickle()
     {
-        rat.happiness++;
+        rat.happiness += 2;
         yield return new WaitForSeconds(2);
     }
 }
