@@ -73,20 +73,7 @@ public class RatRoamState : RatBaseState
             rat.SwitchState(rat.treatState);
         }
 
-        if(rat.hunger > 50 && rat.thirst > 50)
-        {
-            if(rat.happiness > 50)
-            {
-                rat.SwitchState(rat.roamState);
-                
-            }
-            else
-            {
-                rat.SwitchState(rat.wantState);
-            }
-            
-        }
-        else
+        if(rat.hunger <= 50 || rat.thirst <= 50)
         {
             if (rat.hunger <= rat.thirst)
             {
@@ -97,6 +84,9 @@ public class RatRoamState : RatBaseState
                 rat.SwitchState(rat.thirstyState);
             }
         }
+        
+        //This will be the default state if none of the conditions above work
+        rat.SwitchState(rat.roamState);
     }
 
     private IEnumerator WaitToMove()
