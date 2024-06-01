@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 227341293}
   - component: {fileID: 227341292}
   - component: {fileID: 227341294}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: fullfoodbowl_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3353,7 +3353,7 @@ GameObject:
   - component: {fileID: 1214812859}
   - component: {fileID: 1214812858}
   - component: {fileID: 1214812860}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rat
   m_TagString: rat
   m_Icon: {fileID: 0}
@@ -3601,7 +3601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1228198574}
   - component: {fileID: 1228198573}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: bottle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
