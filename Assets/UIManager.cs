@@ -19,7 +19,6 @@ public class UIManager : MonoBehaviour
 
     public bool heldTreat;
 
-    private IEnumerator statDown;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +27,11 @@ public class UIManager : MonoBehaviour
         //Cursor.visible = true;
         heldTreat = false;
         dropText.enabled = false;
-        statDown = StatDown();
+
+        StartCoroutine(HappyStatDown());
+        StartCoroutine(HungerStatUp());
+        StartCoroutine(ThirstStatUp());
+        StartCoroutine(NotTakenCare());
     }
 
     // Update is called once per frame
@@ -40,8 +43,6 @@ public class UIManager : MonoBehaviour
         {
             rat1.value = 100;
         }
-        StartCoroutine(StatDown());
-
         
     }
 
@@ -60,26 +61,31 @@ public class UIManager : MonoBehaviour
         heldTreat = false;
     }
 
-    private IEnumerator StatDown()
+    private IEnumerator HappyStatDown()
     {
-
-        Debug.Log("I was called!");
-
+        //Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
         yield return new WaitForSeconds(10);
         ratFSM.happiness--;
+    }
+    private IEnumerator HungerStatUp()
+    {
         yield return new WaitForSeconds(15);
         ratFSM.hunger -= 5;
+    }
+    private IEnumerator ThirstStatUp()
+    {
         yield return new WaitForSeconds(20);
         ratFSM.thirst -= 5;
-
+    }
+    private IEnumerator NotTakenCare()
+    {
+        yield return new WaitForSeconds(10);
         if (ratFSM.hunger < 70)
         {
-            yield return new WaitForSeconds(10);
             ratFSM.happiness--;
         }
-        if (ratFSM.thirst < 70)
+        if (ratFSM.thirst < 70) 
         {
-            yield return new WaitForSeconds(10);
             ratFSM.happiness--;
         }
     }

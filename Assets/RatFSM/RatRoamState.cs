@@ -28,7 +28,7 @@ public class RatRoamState : RatBaseState
             rat.SwitchState(rat.treatState);
         }
 
-        Debug.Log("plop");
+        //Debug.Log("plop");
         if (start == false) {
             x = Random.Range(minX, maxX);
             y = Random.Range(minY, maxY);
@@ -39,7 +39,7 @@ public class RatRoamState : RatBaseState
         if (timer > 5)
         {
             rat.transform.position = Vector2.MoveTowards(rat.transform.position, pos, 5f);
-            Debug.Log("timer complete");
+            //Debug.Log("timer complete");
             timer = 0;
             if (rat.transform.position.x == x && rat.transform.position.y == y)
             {
@@ -92,7 +92,7 @@ public class RatRoamState : RatBaseState
     private IEnumerator WaitToMove()
     {
 
-        Debug.Log("I was called!");
+        //Debug.Log("I was called!");
 
         int secs = Random.Range(3, 10);
         yield return new WaitForSeconds(secs);
