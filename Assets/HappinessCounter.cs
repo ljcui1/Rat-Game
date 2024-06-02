@@ -13,7 +13,7 @@ public class HappinessCounter : MonoBehaviour
         slider.value = fsm.happiness;
         if (fsm.happiness > 100)
         {
-            slider.value = 100;
+            fsm.happiness = 100;
         }
         if(fsm.happiness < 0)
         {
