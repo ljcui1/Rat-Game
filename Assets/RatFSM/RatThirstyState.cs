@@ -5,6 +5,7 @@ using static UnityEditor.PlayerSettings;
 
 public class RatThirstyState : RatBaseState
 {
+    Vector2 waterPosition;
     float time_passed = 0;
     bool finished = false;
     bool start = false;
@@ -12,15 +13,21 @@ public class RatThirstyState : RatBaseState
     {
         if (start == false)
         {
-            //pos = position of the water
-            //rat.transform.position = Vector2.MoveTowards(rat.transform.position, pos, 5f);
-            //Rotate rat to drink
+            GameObject temp = GameObject.Find("bottle_0");
+            Transform waterTransform = temp.GetComponent<Transform>();
+            waterPosition = new Vector2(waterTransform.position.x, waterTransform.position.y);
+            rat.transform.position = Vector2.MoveTowards(rat.transform.position, waterPosition, 5f);
+            //start the drinking animation
+            start = true;
+            finished = false;
         }
         time_passed += Time.deltaTime;
         if (time_passed >= 10)
         {
-            //Rotate rat back
+            //stop the drinking animation
+            rat.thirst += 50;
             finished = true;
+            start = false;
         }
     }
 

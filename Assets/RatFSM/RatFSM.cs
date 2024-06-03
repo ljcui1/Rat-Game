@@ -38,8 +38,8 @@ public class RatFSM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(happiness);
-        if(happiness > 100)
+        Debug.Log("Happy: " + happiness + "  Hunger: " + hunger + "  Thirst: " + thirst);
+        if (happiness > 100)
         {
             rat.Play("bogglewalk");
         }

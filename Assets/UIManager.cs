@@ -66,16 +66,19 @@ public class UIManager : MonoBehaviour
         //Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
         yield return new WaitForSeconds(10);
         ratFSM.happiness--;
+        yield return StartCoroutine(HappyStatDown());
     }
     private IEnumerator HungerStatUp()
     {
         yield return new WaitForSeconds(15);
         ratFSM.hunger -= 5;
+        yield return StartCoroutine(HungerStatUp());
     }
     private IEnumerator ThirstStatUp()
     {
         yield return new WaitForSeconds(20);
         ratFSM.thirst -= 5;
+        yield return StartCoroutine(ThirstStatUp());
     }
     private IEnumerator NotTakenCare()
     {
@@ -88,5 +91,6 @@ public class UIManager : MonoBehaviour
         {
             ratFSM.happiness--;
         }
+        yield return StartCoroutine(NotTakenCare());
     }
 }
