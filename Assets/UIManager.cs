@@ -19,6 +19,11 @@ public class UIManager : MonoBehaviour
 
     public bool heldTreat;
 
+    bool happydown = false;
+    bool thirstup = false;
+    bool hungerup = false;
+    bool extraNotHappy = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +33,6 @@ public class UIManager : MonoBehaviour
         heldTreat = false;
         dropText.enabled = false;
         Cursor.visible = false;
-
-        StartCoroutine(HappyStatDown());
-        StartCoroutine(HungerStatUp());
-        StartCoroutine(ThirstStatUp());
-        StartCoroutine(NotTakenCare());
     }
 
     // Update is called once per frame
@@ -43,6 +43,26 @@ public class UIManager : MonoBehaviour
         if (ratFSM.happiness > 100)
         {
             rat1.value = 100;
+        }
+        if (happydown == false)
+        { 
+            happydown = true;
+            StartCoroutine(HappyStatDown());
+        }
+        if (hungerup == false)
+        { 
+            hungerup = true;
+            StartCoroutine(HungerStatUp());
+        }
+        if (thirstup == false)
+        { 
+            thirstup = true;
+            StartCoroutine(ThirstStatUp());
+        }
+        if (extraNotHappy == false)
+        { 
+            extraNotHappy = true;
+            StartCoroutine(NotTakenCare());
         }
         
     }
@@ -67,19 +87,19 @@ public class UIManager : MonoBehaviour
         //Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
         yield return new WaitForSeconds(10);
         ratFSM.happiness--;
-        yield return StartCoroutine(HappyStatDown());
+        happydown = false;
     }
     private IEnumerator HungerStatUp()
     {
         yield return new WaitForSeconds(15);
         ratFSM.hunger -= 5;
-        yield return StartCoroutine(HungerStatUp());
+        hungerup = false;
     }
     private IEnumerator ThirstStatUp()
     {
         yield return new WaitForSeconds(20);
         ratFSM.thirst -= 5;
-        yield return StartCoroutine(ThirstStatUp());
+        thirstup = false;
     }
     private IEnumerator NotTakenCare()
     {
@@ -92,6 +112,6 @@ public class UIManager : MonoBehaviour
         {
             ratFSM.happiness--;
         }
-        yield return StartCoroutine(NotTakenCare());
+        extraNotHappy = false;
     }
 }
