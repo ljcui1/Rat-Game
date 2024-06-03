@@ -20,7 +20,9 @@ public class CursorController : MonoBehaviour
     {
         cursor = this.GetComponent<Image>();
         //sr.sprite = hand;
+        //Debug.Log(hand);
         cursor.sprite = hand;
+        Debug.Log(cursor.sprite);
 
         pet = Tickle();
     }
