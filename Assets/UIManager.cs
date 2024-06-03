@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
         //Cursor.visible = true;
         heldTreat = false;
         dropText.enabled = false;
+        Cursor.visible = false;
 
         StartCoroutine(HappyStatDown());
         StartCoroutine(HungerStatUp());
@@ -49,7 +50,7 @@ public class UIManager : MonoBehaviour
     public void holdTreat()
     {
         //Cursor.SetCursor(treathand, Vector2.zero, CursorMode.Auto);
-        cc.sr.sprite = cc.treathand;
+        cc.cursor.sprite = cc.treathand;
         heldTreat = true;
 
     }
@@ -57,7 +58,7 @@ public class UIManager : MonoBehaviour
     public void dropTreat()
     {
         //Cursor.SetCursor(hand, Vector2.zero, CursorMode.Auto);
-        cc.sr.sprite = cc.hand;
+        cc.cursor.sprite = cc.hand;
         heldTreat = false;
     }
 
