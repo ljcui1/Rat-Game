@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CursorController : MonoBehaviour
 {
     public Sprite hand;
     public Sprite treathand;
-    public SpriteRenderer sr;
+    //public SpriteRenderer sr;
+    public Image cursor;
     private Vector3 mousePos;
+    private Vector3 realMouse;
 
     [SerializeField] private RatFSM rat;
 
@@ -15,8 +18,11 @@ public class CursorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sr = this.GetComponent<SpriteRenderer>();
-        sr.sprite = hand;
+        cursor = this.GetComponent<Image>();
+        //sr.sprite = hand;
+        //Debug.Log(hand);
+        cursor.sprite = hand;
+        Debug.Log(cursor.sprite);
 
         pet = Tickle();
     }
@@ -27,7 +33,10 @@ public class CursorController : MonoBehaviour
         mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
+        //realMouse = new Vector3(mousePos.x, mousePos.y, -1);
+
         this.transform.position = mousePos;
+
 
     }
 
@@ -44,7 +53,8 @@ public class CursorController : MonoBehaviour
     {
         if (collision.CompareTag("rat"))
         {
-            StartCoroutine(pet);
+            //StartCoroutine(pet);
+            rat.happiness++;
         }
     }
 
