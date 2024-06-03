@@ -71,6 +71,7 @@ public class UIManager : MonoBehaviour
     {
         //Cursor.SetCursor(treathand, Vector2.zero, CursorMode.Auto);
         cc.cursor.sprite = cc.treathand;
+        Debug.Log("treat time");
         heldTreat = true;
 
     }

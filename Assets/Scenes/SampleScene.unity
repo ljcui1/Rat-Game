@@ -5458,7 +5458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rat 1
+  m_text: rat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5958,11 +5958,11 @@ RectTransform:
   - {fileID: 121009565}
   - {fileID: 1971557994}
   - {fileID: 1687878680}
-  - {fileID: 1281451165}
   - {fileID: 2024322711}
   - {fileID: 2015765268}
   - {fileID: 908915698}
   - {fileID: 1399225906}
+  - {fileID: 1281451165}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
