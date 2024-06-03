@@ -64,8 +64,8 @@ public class CursorController : MonoBehaviour
     {
         if (collision.CompareTag("rat"))
         {
-            //StartCoroutine(pet);
-            rat.happiness++;
+            StartCoroutine(pet);
+            //rat.happiness++;
         }
     }
 

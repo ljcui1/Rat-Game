@@ -86,25 +86,25 @@ public class UIManager : MonoBehaviour
     private IEnumerator HappyStatDown()
     {
         //Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(2);
         ratFSM.happiness--;
         happydown = false;
     }
     private IEnumerator HungerStatUp()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(3);
         ratFSM.hunger -= 5;
         hungerup = false;
     }
     private IEnumerator ThirstStatUp()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(5);
         ratFSM.thirst -= 5;
         thirstup = false;
     }
     private IEnumerator NotTakenCare()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(3);
         if (ratFSM.hunger < 70)
         {
             ratFSM.happiness--;

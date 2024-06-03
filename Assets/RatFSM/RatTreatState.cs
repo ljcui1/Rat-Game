@@ -9,7 +9,7 @@ public class RatTreatState : RatBaseState
     [SerializeField] private Texture2D treathand;
     
     private Vector3 mousePos;
-    public float moveSpeed = 8f;
+    public float moveSpeed = 10f;
     public override void EnterState(RatFSM rat)
     {
         Debug.Log("Rat want Treat");
@@ -34,6 +34,7 @@ public class RatTreatState : RatBaseState
         else
         {
             //switch state to roam
+            rat.hunger += 5;
             rat.happiness += 10;
             rat.SwitchState(rat.roamState);
         }

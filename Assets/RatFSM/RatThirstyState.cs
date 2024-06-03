@@ -16,7 +16,7 @@ public class RatThirstyState : RatBaseState
             GameObject temp = GameObject.Find("bottle_0");
             Transform waterTransform = temp.GetComponent<Transform>();
             waterPosition = new Vector2(waterTransform.position.x, waterTransform.position.y);
-            rat.transform.position = Vector2.MoveTowards(rat.transform.position, waterPosition, 5f);
+            rat.transform.position = Vector2.MoveTowards(rat.transform.position, waterPosition, 8f);
             //start the drinking animation
             start = true;
             finished = false;
