@@ -19,6 +19,17 @@ public class CursorController : MonoBehaviour
     void Start()
     {
         cursor = this.GetComponent<Image>();
+        if (cursor == null)
+        {
+            Debug.LogError("Image component not found on this GameObject.");
+            return;
+        }
+
+        if (hand == null)
+        {
+            Debug.LogError("Hand sprite is not assigned.");
+            return;
+        }
         //sr.sprite = hand;
         //Debug.Log(hand);
         cursor.sprite = hand;
