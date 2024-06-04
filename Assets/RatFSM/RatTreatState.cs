@@ -15,7 +15,7 @@ public class RatTreatState : RatBaseState
 
     public override void UpdateState(RatFSM rat)
     {
-        if(rat.manager.heldTreat == true)
+        if (rat.manager.heldTreat == true)
         {
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -32,6 +32,7 @@ public class RatTreatState : RatBaseState
         else
         {
             //switch state to roam
+            Debug.LogWarning("eated treat");
             rat.hunger += 5;
             rat.happiness += 10;
             rat.SwitchState(rat.roamState);

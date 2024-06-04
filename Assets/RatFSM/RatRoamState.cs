@@ -24,6 +24,7 @@ public class RatRoamState : RatBaseState
     {
         if (rat.manager.heldTreat == true)
         {
+            Debug.LogWarning("treats?");
             rat.SwitchState(rat.treatState);
         }
 

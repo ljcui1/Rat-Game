@@ -53,7 +53,7 @@ public class CursorController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("rat"))
+        if(collision.CompareTag("rat") && rat.currentState == rat.roamState)
         {
             Debug.Log("TICKLE TICKLE");
             rat.SwitchState(rat.tickleState);
@@ -62,7 +62,7 @@ public class CursorController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("rat"))
+        if (collision.CompareTag("rat") && rat.currentState == rat.tickleState)
         {
             StartCoroutine(pet);
             //rat.happiness++;

@@ -10,7 +10,7 @@ public class RatFSM : MonoBehaviour
 
     public SpriteRenderer ratSprite;
 
-    RatBaseState currentState;
+    public RatBaseState currentState;
 
     public RatRoamState roamState = new RatRoamState();
     public RatTreatState treatState = new RatTreatState();
@@ -55,6 +55,7 @@ public class RatFSM : MonoBehaviour
     public void SwitchState(RatBaseState state)
     {
         currentState = state;
+        //Debug.LogWarning(currentState);
         state.EnterState(this);
     }
 
