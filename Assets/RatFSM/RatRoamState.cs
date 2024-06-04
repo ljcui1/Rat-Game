@@ -38,7 +38,7 @@ public class RatRoamState : RatBaseState
         }
         if (timer > 5)
         {
-            rat.transform.position = Vector2.MoveTowards(rat.transform.position, pos, 8f);
+            rat.transform.position = Vector2.MoveTowards(rat.transform.position, pos, 12f);
             //Debug.Log("timer complete");
             timer = 0;
             if (rat.transform.position.x == x && rat.transform.position.y == y)

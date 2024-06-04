@@ -7,7 +7,7 @@ public class RatTreatState : RatBaseState
     [SerializeField] private Texture2D treathand;
     
     private Vector3 mousePos;
-    public float moveSpeed = 10f;
+    public float moveSpeed = 15f;
     public override void EnterState(RatFSM rat)
     {
         Debug.Log("Rat want Treat");
